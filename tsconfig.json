@@ -5,8 +5,8 @@
     "noImplicitAny": false,
     "strictNullChecks": true,
     "strict": true,
-    "target": "es6",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "CommonJS",
     "esModuleInterop": true
   },
   "include": [

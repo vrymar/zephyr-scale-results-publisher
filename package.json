@@ -4,6 +4,7 @@
   "description": "Automation results publisher to Zephyr Scale Cloud",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "keywords": [
     "zephyr",
     "scale",

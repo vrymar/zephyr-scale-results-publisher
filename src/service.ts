@@ -52,6 +52,9 @@ export class Service {
       return await this.got.post(`${path}`, { searchParams: parameters, body: body });
     } catch (err) {
       console.error(`Error when doing POST request to endpoint ${path}`);
+      if (err instanceof Error) {
+        console.error(err.stack);
+      }
       return err;
     }
   }

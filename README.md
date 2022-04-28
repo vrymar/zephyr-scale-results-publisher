@@ -17,7 +17,6 @@ Publish Cucumber results:
 
 ```javascript
 import { Automation, Utils } from 'zephyr-scale-results-publisher';
-import FormData from 'form-data';
 
 const api = new Automation();
 const utils = new Utils();
