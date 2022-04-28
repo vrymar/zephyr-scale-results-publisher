@@ -47,10 +47,10 @@ export class Service {
     }
   }
 
-  protected async postFileParams(path: string, parameters, body) {   
-    try {      
+  protected async postFileParams(path: string, parameters, body) {
+    try {
       return await this.got.post(`${path}`, { searchParams: parameters, body: body });
-    } catch (err) {      
+    } catch (err) {
       console.error(`Error when doing POST request to endpoint ${path}`);
       return err;
     }
