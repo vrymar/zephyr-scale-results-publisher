@@ -16,12 +16,10 @@ How to generate API KEY: [Generating API Access Tokens](https://support.smartbea
 Publish Cucumber results:
 
 ```javascript
-import { Automation } from 'zephyr-scale-results-publisher';
-import fs from 'fs';
+import { Automation, Utils } from 'zephyr-scale-results-publisher';
 import FormData from 'form-data';
 
 const api = new Automation();
-const form = new FormData();
 const utils = new Utils();
 
 const zipFilePath = '/my-automation-project/testResults.zip';
