@@ -1,4 +1,4 @@
-export { Automation } from './automation';
-export { Folders } from './folders';
-export { Utils } from './utils';
+export { Automation } from './automation.js';
+export { Folders } from './folders.js';
+export { Utils } from './utils.js';
 

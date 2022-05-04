@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./lib",
+    "outDir": "lib",
     "declaration": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
@@ -10,6 +10,9 @@
     "esModuleInterop": true,
     "resolveJsonModule": false,
     "allowSyntheticDefaultImports": true,
+    "lib": [
+			"es2020"
+		]
   },
   "include": [
     "src"
