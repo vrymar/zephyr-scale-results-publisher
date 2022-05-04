@@ -6,10 +6,10 @@ export class Folders extends Service {
   }
 
   public async getFolders(
-    projectKey: string = '',
-    maxResults: number = 10,
-    startAt: number = 0,
-    folderType: string = '',
+    projectKey = '',
+    maxResults = 10,
+    startAt = 0,
+    folderType = '',
   ) {
     const searchParams = {
       projectKey: projectKey === '' ? null : projectKey,
@@ -21,7 +21,7 @@ export class Folders extends Service {
     return data['body'];
   }
 
-  public async createFolder(folderName: string, projectKey: string, folderType: string, parentId: number = 0) {
+  public async createFolder(folderName: string, projectKey: string, folderType: string, parentId = 0) {
     const body = {
       parentId: parentId === 0 ? null : parentId,
       name: folderName,
@@ -38,10 +38,10 @@ export class Folders extends Service {
   }
 
   public async getFolderPropertiesByName(
-    folderName: string = '',
-    projectKey: string = '',
-    maxResults: number = 10,
-    folderType: string = '',
+    folderName = '',
+    projectKey = '',
+    maxResults = 10,
+    folderType = '',
     ) {
     const data = this.getFolders(projectKey, maxResults, 0, folderType).then((result) => {
       return this.findFolderInResponse(folderName, result);
@@ -49,11 +49,11 @@ export class Folders extends Service {
     return data;
   }
 
-  private async findFolderInResponse(folderName: string = '', responseBody: string) {
+  private async findFolderInResponse(folderName = '', responseBody: string) {
     console.info(`Start looking for a folder by name: ${folderName}`);
-    var stringData = JSON.stringify(responseBody);
-    var jsonParsed = JSON.parse(stringData);
-    var result = jsonParsed.values.find((obj: { name: string; }) => {
+    const stringData = JSON.stringify(responseBody);
+    const jsonParsed = JSON.parse(stringData);
+    const result = jsonParsed.values.find((obj: { name: string; }) => {
       if (obj.name === folderName) {
         return obj;
       }

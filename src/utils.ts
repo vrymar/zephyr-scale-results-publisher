@@ -19,15 +19,15 @@ export class Utils {
   public async zip(zipFilePath: string, sourceFileName: string, sourceDir: string) {
     const sourceFile = path.join(sourceDir, sourceFileName);
     return new Promise((resolve) => {
-      let output = fs.createWriteStream(zipFilePath);
-      let archive = archiver('zip');
+      const output = fs.createWriteStream(zipFilePath);
+      const archive = archiver('zip');
 
     output.on('close', async () => {
       console.log('Archiving is successful');
       resolve(output);
     });
 
-    archive.on('error', function (err: any) {
+    archive.on('error', function (err: unknown) {
       throw err;
     });
 
