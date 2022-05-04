@@ -1,10 +1,12 @@
 {
   "name": "zephyr-scale-results-publisher",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Automation results publisher to Zephyr Scale Cloud",
-  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "Vitalii Rymar",
   "types": "lib/index.d.ts",
   "type": "module",
+  "exports": "./lib/index.js",
   "keywords": [
     "zephyr",
     "scale",
@@ -13,8 +15,6 @@
     "api",
     "automation"
   ],
-  "author": "Vitalii Rymar",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Vitalizzzer/zephyr-scale-results-publisher.git"
@@ -29,6 +29,9 @@
     "build": "tsc",
     "lint": "tslint -p tsconfig.json"
   },
+  "files": [
+		"lib/**/*"
+	],
   "devDependencies": {
     "@types/archiver": "^5.3.1",
     "@types/node": "^17.0.29",

@@ -5,9 +5,11 @@
     "noImplicitAny": false,
     "strictNullChecks": true,
     "strict": true,
-    "target": "es6",
+    "target": "es2020",
     "module": "CommonJS",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": false,
+    "allowSyntheticDefaultImports": true,
   },
   "include": [
     "src"
