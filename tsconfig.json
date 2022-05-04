@@ -5,14 +5,19 @@
     "noImplicitAny": false,
     "strictNullChecks": true,
     "strict": true,
-    "target": "es2020",
+    "target": "es2021",
     "module": "CommonJS",
     "esModuleInterop": true,
     "resolveJsonModule": false,
     "allowSyntheticDefaultImports": true,
     "lib": [
 			"es2020"
-		]
+		],
+    "jsx": "react",
+    "pretty": true,
+    "stripInternal": true,
+		"newLine": "lf",
+    "skipLibCheck": true
   },
   "include": [
     "src"
