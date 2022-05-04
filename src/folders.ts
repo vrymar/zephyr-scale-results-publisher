@@ -32,8 +32,34 @@ export class Folders extends Service {
     return data['body'];
   }
 
-  public async getFolderId(id: string) {
+  public async getFolderById(id: string) {
     const data = await this.methodGET(`folders/${id}`);
     return data['body'];
+  }
+
+  public async getFolderPropertiesByName(
+    folderName: string = '',
+    projectKey: string = '',
+    maxResults: number = 10,
+    folderType: string = ''
+    ) {    
+    const data = this.getFolders(projectKey, maxResults, 0, folderType).then((result) => {     
+      return this.findFolderInResponse(folderName, result);
+    });
+
+    return data;
+  }
+
+  private async findFolderInResponse(folderName: string = '', responseBody: string){
+    console.info(`Start looking for a folder by name: ${folderName}`);
+    var stringData = JSON.stringify(responseBody);
+    var jsonParsed = JSON.parse(stringData);
+    var result = jsonParsed.values.find((obj: { name: string; }) => {
+      if(obj.name === folderName){      
+        return obj;
+      }    
+    });
+    console.info(`Found folder: ${JSON.stringify(result)}`);
+    return result;
   }
 }
