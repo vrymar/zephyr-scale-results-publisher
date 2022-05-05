@@ -5,7 +5,7 @@
     "noImplicitAny": false,
     "strictNullChecks": true,
     "strict": true,
-    "target": "es2021",
+    "target": "es2020",
     "module": "CommonJS",
     "esModuleInterop": true,
     "resolveJsonModule": false,

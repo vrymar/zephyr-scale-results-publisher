@@ -37,16 +37,18 @@ export class Folders extends Service {
     return data['body'];
   }
 
-  public async getFolderPropertiesByName(
-    folderName = '',
-    projectKey = '',
-    maxResults = 10,
-    folderType = '',
+  public async getFolderIdByName(
+    folderName: string,
+    projectKey: string,
+    maxResults = 20,
+    folderType = 'TEST_CYCLE',
     ) {
-    const data = this.getFolders(projectKey, maxResults, 0, folderType).then((result) => {
+    const data = await this.getFolders(projectKey, maxResults, 0, folderType).then((result) => {
       return this.findFolderInResponse(folderName, result);
     });
-    return data;
+    const id = data.id;
+    console.info(`Found folder id: ${id}`);
+    return id;
   }
 
   private async findFolderInResponse(folderName = '', responseBody: string) {
