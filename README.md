@@ -2,8 +2,6 @@
 
 ## Overview
 The tool provides an opportunity to update test cases status and publish automation test results into Zephyr Scale Cloud.  
-Detailed Automation API requests and properties can be found here: [Zephyr Scale API](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#tag/Automations)  
-How to generate API KEY: [Generating API Access Tokens](https://support.smartbear.com/zephyr-scale-cloud/docs/rest-api/generating-api-access-tokens.html)  
 
 ## Requirements
 - Requires Node.js 14.16+
@@ -19,8 +17,7 @@ How to generate API KEY: [Generating API Access Tokens](https://support.smartbea
 npm i zephyr-scale-results-publisher
 ```
 
-## Example (using Typescript)
-Publish results:
+## Usage
 
 ```javascript
 import { Automation, Folders, Utils } from 'zephyr-scale-results-publisher';
