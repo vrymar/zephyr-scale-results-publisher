@@ -14,7 +14,12 @@ Detailed Automation API requests and properties can be found here: [Zephyr Scale
 How to generate API KEY: [Generating API Access Tokens](https://support.smartbear.com/zephyr-scale-cloud/docs/rest-api/generating-api-access-tokens.html)  
 
 
-### Example (using Typescript)
+## Installation
+```
+npm i zephyr-scale-results-publisher
+```
+
+## Example (using Typescript)
 Publish results:
 
 ```javascript
