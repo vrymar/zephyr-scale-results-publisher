@@ -17,7 +17,7 @@ How to generate API KEY: [Generating API Access Tokens](https://support.smartbea
 npm i zephyr-scale-results-publisher
 ```
 
-## Usage
+## Usage (JavaScript is the best way)
 
 ```javascript
 import { Automation, Folders, Utils } from 'zephyr-scale-results-publisher';
@@ -35,18 +35,20 @@ const sourceFilePath = '/DIRECTORY/cucumber.json';
 await utils.zip(zipFilePath, sourceFilePath);
 
 // Create form data to publish results into the root Zephyr Test Cycles folder
+// Note: Comment the line below, if customized Test Cycle properties are uncommented/used.
 const formData = await utils.createFormData(zipFilePath);
 
 // Create form data with customized Test Cycle properties and publish results into a specific Zephyr Test Cycles folder
-const folderName = 'Some folder';
-const testCycleName = 'Test Cycle Name';
-const testCycleDescription = 'Some description';
-const jiraProjectVersion = 1;
-const maxResults = 20;
-const folderType = 'TEST_CYCLE';
-const folderId = await folders.getFolderIdByName(folderName, projectKey, maxResults, folderType);
-const testCycleJson = await utils.generateTestCycleJson(testCycleName, testCycleDescription, jiraProjectVersion, folderId);
-const formData = await utils.createFormData(zipFilePath, testCycleJson);
+// Uncomment 9 fields below and update their values according to your needs.
+// const folderName = 'Some folder';
+// const testCycleName = 'Test Cycle Name';
+// const testCycleDescription = 'Some description';
+// const jiraProjectVersion = 1;
+// const maxResults = 20;
+// const folderType = 'TEST_CYCLE';
+// const folderId = await folders.getFolderIdByName(folderName, projectKey, maxResults, folderType);
+// const testCycleJson = await utils.generateTestCycleJson(testCycleName, testCycleDescription, jiraProjectVersion, folderId);
+// const formData = await utils.createFormData(zipFilePath, testCycleJson);
 
 // Publish Cucumber results into Zephyr Scale
 automation.publishCucumber(projectKey, autoCreateTestCases, formData).then((result) => {
