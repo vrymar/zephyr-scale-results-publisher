@@ -5,7 +5,7 @@ The tool provides an opportunity to update test cases status and publish automat
 
 ## Requirements
 - Requires Node.js 14.16+
-- Set environment variable Zephyr API KEY: `ZEPHYR_TOKEN=XXXXXXXXX`
+- Set environment variable Zephyr API KEY: `export ZEPHYR_TOKEN=XXXXXXXXX`
 
 ## Documentation
 Detailed Automation API requests and properties can be found here: [Zephyr Scale API](https://support.smartbear.com/zephyr-scale-cloud/api-docs/#tag/Automations)   
