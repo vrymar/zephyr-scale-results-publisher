@@ -33,7 +33,7 @@ export class Folders extends Service {
   }
 
   public async getFolderById(id: string) {
-    const data = await this.methodGET(`folders/${id}`);
+    const data = await this.get(`folders/${id}`);
     return data['body'];
   }
 
@@ -42,17 +42,17 @@ export class Folders extends Service {
     projectKey: string,
     maxResults = 20,
     folderType = 'TEST_CYCLE',
-    ) {
+  ) {
     const data = await this.getFolders(projectKey, maxResults, 0, folderType).then((result) => {
       return this.findFolderInResponse(folderName, result);
     });
     const id = data.id;
-    console.info(`Found folder id: ${id}`);
+    console.info(`Zephyr publisher: found folder id: ${id}`);
     return id;
   }
 
   private async findFolderInResponse(folderName = '', responseBody: string) {
-    console.info(`Start looking for a folder by name: ${folderName}`);
+    console.info(`Zephyr publisher: start looking for a folder by name: ${folderName}`);
     const stringData = JSON.stringify(responseBody);
     const jsonParsed = JSON.parse(stringData);
     const result = jsonParsed.values.find((obj: { name: string; }) => {
@@ -60,7 +60,7 @@ export class Folders extends Service {
         return obj;
       }
     });
-    console.info(`Found folder: ${JSON.stringify(result)}`);
+    console.info(`Zephyr publisher: found folder: ${JSON.stringify(result)}`);
     return result;
   }
 }
