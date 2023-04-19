@@ -8,7 +8,8 @@ export class Automation extends Service {
   public async publishCucumber(projectId: string, autoCreateTestCases: boolean, body: unknown) {
     const data = await this.postFileParams('automations/executions/cucumber', {
       projectKey: projectId,
-      autoCreateTestCases: autoCreateTestCases},
+      autoCreateTestCases: autoCreateTestCases
+    },
       body);
     return data['body'];
   }
@@ -16,7 +17,8 @@ export class Automation extends Service {
   public async publishJUnit(projectId: string, autoCreateTestCases: boolean, body: unknown) {
     const data = await this.postFileParams('automations/executions/junit', {
       projectKey: projectId,
-      autoCreateTestCases: autoCreateTestCases},
+      autoCreateTestCases: autoCreateTestCases
+    },
       body);
     return data['body'];
   }
@@ -24,8 +26,9 @@ export class Automation extends Service {
   public async publishCustomFormat(projectId: string, autoCreateTestCases: boolean, body: unknown) {
     const data = await this.postFileParams('automations/executions/custom', {
       projectKey: projectId,
-      autoCreateTestCases: autoCreateTestCases },
+      autoCreateTestCases: autoCreateTestCases
+    },
       body);
-      return data['body'];
+    return data['body'];
   }
 }

@@ -50,17 +50,21 @@ const formData = await utils.createFormData(zipFilePath);
 // const testCycleJson = await utils.generateTestCycleJson(testCycleName, testCycleDescription, jiraProjectVersion, folderId);
 // const formData = await utils.createFormData(zipFilePath, testCycleJson);
 
-// Publish Cucumber results into Zephyr Scale
+// Use one of the following options depending on the report file format:
+
+// Publish Cucumber results into Zephyr Scale:
+// Feature or scenario tags with prefix @ZephyrLabel= are added to the test cases as labels. E.g. @ZephyrLabel=My_Label. My_Label will be added to the marked test case as label. 
 automation.publishCucumber(projectKey, autoCreateTestCases, formData).then((result) => {
   console.log(result);
+  testCases.updateTestCasesWithLables(sourceFilePath, projectKey, result.testCycle.key);
 });
 
-// Publish JUnit results into Zephyr Scale
+// Publish JUnit results into Zephyr Scale:
 automation.publishJUnit(projectKey, autoCreateTestCases, formData).then((result) => {
   console.log(result);
 });
 
-// Publish Custom format results into Zephyr Scale
+// Publish Custom format results into Zephyr Scale:
 automation.publishCustomFormat(projectKey, autoCreateTestCases, formData).then((result) => {
   console.log(result);
 });
