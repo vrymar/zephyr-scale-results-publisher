@@ -1,6 +1,6 @@
-import { Service } from './service';
+import { ZephyrClient } from './zephyrClient';
 
-export class Folders extends Service {
+export class Folders extends ZephyrClient {
   constructor() {
     super();
   }

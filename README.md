@@ -53,10 +53,24 @@ const formData = await utils.createFormData(zipFilePath);
 // Use one of the following options depending on the report file format:
 
 // Publish Cucumber results into Zephyr Scale:
-// Feature or scenario tags with prefix @ZephyrLabel= are added to the test cases as labels. E.g. @ZephyrLabel=My_Label. My_Label will be added to the marked test case as label. 
 automation.publishCucumber(projectKey, autoCreateTestCases, formData).then((result) => {
   console.log(result);
+
+  // Used to publish Cucumber feature or scenario tags with prefix @ZephyrLabel= are added to the test cases as labels. 
+  // E.g. @ZephyrLabel=My_Label. My_Label will be added to the marked test case as label. 
+  // If not provided, this feature is ignored. 
   testCases.updateTestCasesWithLables(sourceFilePath, projectKey, result.testCycle.key);
+
+  
+  // Used to publish Cucumber feature or scenario tags with prefix @ZephyrIssue= as linked Jira issues. 
+  // E.g. @ZephyrIssue=QP-70. QP-70 will be added to the marked test case into Traceability -> Issues. 
+  // If not provided, this feature is ignored. 
+  // USAGE:
+  // Create jira.properties file with the following content in the root or your project
+  // jiraBaseUri=https://<YOUR_JIRA_CLOUD_ADDRESS>.atlassian.net/rest/api/3/  
+  // jiraToken=<JIRA_TOKEN> (better to provide it as a GitHub secret or an environment variable. E.g. for Windows: set JIRA_TOKEN=xxxxxxxxxxxxxx)  
+  // jiraUserEmail=<JIRA_USER_EMAIL> (better to provide it as a GitHub secret or an environment variable. E.g. for Windows: set JIRA_USER_EMAIL=john.smith@ah.nl)
+  testCases.updateTestCasesWithIssues(sourceFilePath, projectKey, result.testCycle.key);
 });
 
 // Publish JUnit results into Zephyr Scale:

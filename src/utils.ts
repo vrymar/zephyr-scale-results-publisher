@@ -17,7 +17,7 @@ export class Utils {
         form.append('testCycle', testCycleJson, { contentType: 'application/json' });
       }
     } else {
-      console.error(`Zephyr publisher error: results file was not found: ${filePath}`);
+      console.error(`Zephyr publisher: results file was not found: ${filePath}`);
     }
     return form;
   }
@@ -56,9 +56,6 @@ export class Utils {
 
   public async getAllTagsFromResultsFile(sourceFilePath: string, tagPrefix: string) {
     const results = await this.readResultsFile(sourceFilePath);
-    // .then((resultsJson) => {
-    //   return resultsJson;
-    // });
 
     try {
       if (results !== undefined) {

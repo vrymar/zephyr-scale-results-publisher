@@ -1,13 +1,15 @@
 import got from 'got';
 
-export class Service {
+export class ZephyrClient {
   protected got;
 
   constructor() {
     this.got = got.extend({
       prefixUrl: 'https://api.zephyrscale.smartbear.com/v2',
       responseType: 'json',
-      headers: { Authorization: `Bearer ${process.env.ZEPHYR_TOKEN}` },
+      headers: {
+        Authorization: `Bearer ${process.env.ZEPHYR_TOKEN}`
+      }
     });
   }
 

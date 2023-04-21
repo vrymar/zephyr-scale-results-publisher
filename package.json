@@ -6,8 +6,8 @@
   "author": "Vitalii Rymar",
   "main": "./lib/index.js",
   "engines": {
-		"node": ">=14.16"
-	},
+    "node": ">=14.16"
+  },
   "keywords": [
     "zephyr",
     "scale",
@@ -37,6 +37,7 @@
   "devDependencies": {
     "@types/archiver": "^5.3.1",
     "@types/node": "^17.0.29",
+    "@types/properties-reader": "^2.1.1",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "eslint": "^8.14.0",
@@ -50,6 +51,7 @@
     "form-data": "^4.0.0",
     "fs": "^0.0.1-security",
     "got": "^11.8.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "properties-reader": "^2.2.0"
   }
 }
