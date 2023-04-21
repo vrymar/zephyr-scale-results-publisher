@@ -1,6 +1,6 @@
-import { Service } from './service';
+import { ZephyrClient } from './zephyrClient';
 
-export class Automation extends Service {
+export class Automation extends ZephyrClient {
   constructor() {
     super();
   }
