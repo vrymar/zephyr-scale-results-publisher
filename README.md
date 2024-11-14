@@ -1,3 +1,7 @@
+> [!WARNING]  
+> This repository/project/tool will not be available soon! Please replace it within your projects!
+
+
 # Zephyr Scale API - Automation Results Publisher
 
 ## Overview
